@@ -2,7 +2,7 @@ import { InputForm } from "./InputForm";
 
 function Education({ values, receiveData }) {
   const handleChange = ({target}) => {
-    receiveData(target.name, target.value , values.id)
+    receiveData(target.name, target.value , values.id, "education")
   }
 
   return (
