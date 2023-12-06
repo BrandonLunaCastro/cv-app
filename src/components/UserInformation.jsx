@@ -18,9 +18,6 @@ const UserInformation = ({
     }
     setShow(val);
   };
-  const handleAdd = () => {
-    addMoreContent;
-  };
 
   return (
     <section className="content">
@@ -46,7 +43,7 @@ const UserInformation = ({
           <button onClick={() => handleClick(1)}>+</button>
         </div>
         {show === 1 && (
-          <>
+          <div>
             {educationalValues.map((value) => {
               return (
                 <Education
@@ -56,8 +53,10 @@ const UserInformation = ({
                 />
               );
             })}
-            <button onClick={handleAdd}>Add more</button>
-          </>
+            <button onClick={() => addMoreContent("education")}>
+              Add more
+            </button>
+          </div>
         )}
       </article>
       <article className="content__editable">
@@ -68,7 +67,20 @@ const UserInformation = ({
           <button onClick={() => handleClick(2)}>+</button>
         </div>
         {show === 2 && (
-          <Professional data={professionalValues} receiveData={receiveData} />
+          <div>
+            {professionalValues.map((object) => {
+              return (
+                <Professional
+                  data={object}
+                  receiveData={receiveData}
+                  key={object.id}
+                />
+              );
+            })}
+            <button onClick={() => addMoreContent("profession")}>
+              Add more
+            </button>
+          </div>
         )}
       </article>
     </section>
