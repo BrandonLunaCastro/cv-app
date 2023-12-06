@@ -62,18 +62,18 @@ const UserInformation = ({
       <article className="content__editable">
         <div>
           <p>
-            <b>ProfessionalExperience</b>
+            <b>Professional Experience</b>
           </p>
           <button onClick={() => handleClick(2)}>+</button>
         </div>
         {show === 2 && (
           <div>
-            {professionalValues.map((object) => {
+            {professionalValues.map((value) => {
               return (
                 <Professional
-                  data={object}
+                  value={value}
                   receiveData={receiveData}
-                  key={object.id}
+                  key={value.id}
                 />
               );
             })}
