@@ -2,6 +2,7 @@ import UserInformation from "./UserInformation";
 import { Resume } from "./Resume";
 import { useState } from "react";
 import { v1 as uuid } from "uuid";
+import { createNewArray } from "../helpers/createNewArray";
 const Container = () => {
   const [dataInfo, setDataInfo] = useState({
     name: "",
@@ -36,16 +37,41 @@ const Container = () => {
     setDataInfo({ ...dataInfo, [input]: value });
   };
 
-  const receiveData = (input, value, id) => {
-    const filtered = educationalValues.filter(obj => obj.id === id).map(el => {
-      return setEducational()
-    })
-    console.log(filtered)
+  const receiveData = (input, value, id, component) => {
+    if (!component) return;
+    if (component !== "education") return;
+    if (component === "education") {
+      const newArray = createNewArray(educationalValues, input, value, id);
+      setEducational(newArray);
+    }
+    if (component === "profession") {
+      const newArray = createNewArray(professionalValues, input, value, id);
+      setProfessional(newArray);
+    }
   };
   const addMoreContent = (value) => {
-    /*     if (value === "education") {
-
-    } */
+    if (!value) return;
+    if (value === "education") {
+      const newObject = {
+        school: "",
+        title: "",
+        dateStart: "",
+        dateEnd: "",
+        id: uuid(),
+      };
+      setEducational(educationalValues.concat(newObject));
+    }
+    if (value === "profession") {
+      const newObject = {
+        company: "",
+        position: "",
+        responsibilities: "",
+        dateStartWork: "",
+        dateEndWork: "",
+        id: uuid(),
+      };
+      setProfessional(professionalValues.concat(newObject));
+    }
   };
 
   return (
