@@ -1,14 +1,11 @@
-
 import { Header } from "./Header";
-import UserInformation from "./UserInformation";
+import Container from "./Container";
 
 function App() {
   return (
     <>
       <Header />
-      <section className="container">
-        <UserInformation />
-      </section>
+      <Container />
     </>
   );
 }
