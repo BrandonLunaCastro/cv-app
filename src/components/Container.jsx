@@ -38,8 +38,8 @@ const Container = () => {
   };
 
   const receiveData = (input, value, id, component) => {
+    console.log(component)
     if (!component) return;
-    if (component !== "education") return;
     if (component === "education") {
       const newArray = createNewArray(educationalValues, input, value, id);
       setEducational(newArray);
