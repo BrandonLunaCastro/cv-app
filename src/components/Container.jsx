@@ -1,8 +1,9 @@
 import UserInformation from "./UserInformation";
 import { Resume } from "./Resume";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { v1 as uuid } from "uuid";
 import { createNewArray } from "../helpers/createNewArray";
+// import { changeStateInputs } from "../helpers/changeStateInputs";
 const Container = () => {
   const [dataInfo, setDataInfo] = useState({
     name: "",
@@ -20,6 +21,7 @@ const Container = () => {
       dateStart: "",
       dateEnd: "",
       id: uuid(),
+      stateInputs: false,
     },
   ]);
   const [professionalValues, setProfessional] = useState([
@@ -30,6 +32,7 @@ const Container = () => {
       dateStartWork: "",
       dateEndWork: "",
       id: uuid(),
+      stateInputs: false,
     },
   ]);
 
@@ -57,6 +60,7 @@ const Container = () => {
         dateStart: "",
         dateEnd: "",
         id: uuid(),
+        stateInputs: false,
       };
       setEducational(educationalValues.concat(newObject));
     }
@@ -68,21 +72,44 @@ const Container = () => {
         dateStartWork: "",
         dateEndWork: "",
         id: uuid(),
+        stateInputs: false,
       };
       setProfessional(professionalValues.concat(newObject));
     }
   };
 
-  const deleteContent = (value,id) => {
+  const deleteContent = (value, id) => {
     if (value === "profession") {
-      const filtered = professionalValues.filter(element => element.id !== id)
+      const filtered = professionalValues.filter(
+        (element) => element.id !== id
+      );
       setProfessional(filtered);
     }
     if (value === "education") {
-      const filtered = educationalValues.filter(element => element.id !== id)
+      const filtered = educationalValues.filter((element) => element.id !== id);
       setEducational(filtered);
     }
-  }
+  };
+
+  const handleInputsEducation = (element, state) => {
+    let newState; 
+    if (element === "safe") {
+      newState = educationalValues.map((el) => {
+        return {
+          ...el,
+          stateInputs: true,
+        };
+      });
+    } else {
+      newState = educationalValues.map((el) => {
+        return {
+          ...el,
+          stateInputs: false,
+        };
+      });
+    }
+    setEducational(newState);
+  };
 
   return (
     <section className="container">
@@ -94,6 +121,7 @@ const Container = () => {
         receiveData={receiveData}
         addMoreContent={addMoreContent}
         deleteContent={deleteContent}
+        handleInputsEducation={handleInputsEducation}
       />
       <Resume />
     </section>
