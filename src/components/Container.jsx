@@ -38,7 +38,6 @@ const Container = () => {
   };
 
   const receiveData = (input, value, id, component) => {
-    console.log(component)
     if (!component) return;
     if (component === "education") {
       const newArray = createNewArray(educationalValues, input, value, id);
@@ -74,6 +73,17 @@ const Container = () => {
     }
   };
 
+  const deleteContent = (value,id) => {
+    if (value === "profession") {
+      const filtered = professionalValues.filter(element => element.id !== id)
+      setProfessional(filtered);
+    }
+    if (value === "education") {
+      const filtered = educationalValues.filter(element => element.id !== id)
+      setEducational(filtered);
+    }
+  }
+
   return (
     <section className="container">
       <UserInformation
@@ -83,6 +93,7 @@ const Container = () => {
         receiveDataUser={receiveDataUser}
         receiveData={receiveData}
         addMoreContent={addMoreContent}
+        deleteContent={deleteContent}
       />
       <Resume />
     </section>
