@@ -2,6 +2,7 @@ import { useState } from "react";
 import Education from "./Education";
 import GeneralInformation from "./GeneralInformation";
 import Professional from "./Professional";
+import { changeStateInputs } from "../helpers/changeStateInputs";
 
 const UserInformation = ({
   dataInfo,
@@ -11,6 +12,7 @@ const UserInformation = ({
   receiveData,
   addMoreContent,
   deleteContent,
+  handleInputsEducation
 }) => {
   const [show, setShow] = useState(0);
   const handleClick = (val) => {
@@ -20,7 +22,7 @@ const UserInformation = ({
     setShow(val);
   };
 
-  const up = (
+  /*   const up = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       height="16"
@@ -39,8 +41,7 @@ const UserInformation = ({
     >
       <path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
     </svg>
-  );
-
+  ); */
   return (
     <section className="content">
       <article className="content__editable">
@@ -87,16 +88,20 @@ const UserInformation = ({
                 </div>
               );
             })}
-            <button onClick={() => addMoreContent("education")}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="16"
-                width="14"
-                viewBox="0 0 448 512"
-              >
-                <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
-              </svg>
-            </button>
+            <article>
+              <button onClick={() => addMoreContent("education")}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="16"
+                  width="14"
+                  viewBox="0 0 448 512"
+                >
+                  <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
+                </svg>
+              </button>
+              <button className="edit" onClick={handleInputsEducation}>Edit</button>
+              <button className="safe" onClick={handleInputsEducation}>Safe</button>
+            </article>
           </>
         )}
       </article>
@@ -130,16 +135,24 @@ const UserInformation = ({
                 </div>
               );
             })}
-            <button onClick={() => addMoreContent("profession")}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="16"
-                width="14"
-                viewBox="0 0 448 512"
-              >
-                <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
-              </svg>
-            </button>
+            <article>
+              <button onClick={() => addMoreContent("profession")}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="16"
+                  width="14"
+                  viewBox="0 0 448 512"
+                >
+                  <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
+                </svg>
+              </button>
+              <button id="edit" onClick={() => handleInputsEducation("edit", "profession")}>
+                Edit
+              </button>
+              <button id="safe" onClick={() => handleInputsEducation("safe", "profession")}>
+                Safe
+              </button>
+            </article>
           </>
         )}
       </article>
