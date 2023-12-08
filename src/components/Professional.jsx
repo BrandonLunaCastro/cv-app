@@ -13,18 +13,21 @@ export default function Professional({ value, receiveData }) {
         text={"Company name"}
         name={"company"}
         value={value.company}
+        state={value.stateInputs}
       />
       <InputForm
         onFunction={handleChange}
         text={"Position title"}
         name={"position"}
         value={value.position}
+        state={value.stateInputs}
         />
       <Description
         onFunction={handleChange}
         text={"Main responsibilities"}
         name={"responsibilities"}
         value={value.responsibilities}
+        state={value.stateInputs}
         />
       <InputForm
         onFunction={handleChange}
@@ -32,6 +35,7 @@ export default function Professional({ value, receiveData }) {
         type={"date"}
         name={"dateStartWork"}
         value={value.dateStartWork}
+        state={value.stateInputs}
       />
       <InputForm
         onFunction={handleChange}
@@ -39,6 +43,7 @@ export default function Professional({ value, receiveData }) {
         type={"date"}
         name={"dateEndWork"}
         value={value.dateEndWork}
+        state={value.stateInputs}
       />
     </div>
   );
