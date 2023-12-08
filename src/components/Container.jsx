@@ -3,6 +3,7 @@ import { Resume } from "./Resume";
 import { useState } from "react";
 import { v1 as uuid } from "uuid";
 import { createNewArray } from "../helpers/createNewArray";
+import { changeStateInput } from "../helpers/changeStateInput";
 
 const Container = () => {
   const [dataInfo, setDataInfo] = useState({
@@ -95,7 +96,6 @@ const Container = () => {
     let actualState;
     let setValue;
     let newState;
-
     if (!state || !element) return;
     if (state === "profession") {
       actualState = professionalValues;
@@ -106,23 +106,12 @@ const Container = () => {
       setValue = setEducational;
     }
     if (element === "safe") {
-      newState = actualState.map((el) => {
-        return {
-          ...el,
-          stateInputs: true,
-        };
-      });
+      newState = changeStateInput(actualState, "stateInputs", true);
     } else {
-      newState = actualState.map((el) => {
-        return {
-          ...el,
-          stateInputs: false,
-        };
-      });
+      newState = changeStateInput(actualState, "stateInputs", false);
     }
     setValue(newState);
   };
-
   return (
     <section className="container">
       <UserInformation
