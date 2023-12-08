@@ -1,5 +1,6 @@
 .container {
     display: flex;
+    gap: 30px;
 }
 .content {
     display: flex;
@@ -14,4 +15,17 @@
     color: aliceblue;
     border-radius: 10px;
     padding: 10px;
+}
+
+.resume {
+    display: flex;
+    border: 2px solid #333;
+    flex-basis: 25rem;
+    flex-grow: 80%;
+}
+
+.left {
+    border-right: 2px solid #333;
+    background-color: #222;
+    color: #fefefe;
 }
