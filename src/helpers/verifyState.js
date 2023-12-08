@@ -1,1 +1,1 @@
-export const verifyState = (array) => array.filter(element => element.stateInputs)
+export const verifyState = (array) => array.some(element => element.stateInputs)
