@@ -1,11 +1,18 @@
 import { InputForm } from "./InputForm";
+import Button from "./Button";
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(e.target))
+  console.log(data)
+};
 
 function Education({ values, receiveData }) {
-  const handleChange = ({target}) => {
-    receiveData(target.name, target.value , values.id, "education")
-  }
+  const handleChange = ({ target }) => {
+    receiveData(target.name, target.value, values.id, "education");
+  };
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <InputForm
         name={"school"}
         text={"School Name"}
@@ -36,7 +43,11 @@ function Education({ values, receiveData }) {
         value={values.dateEnd}
         state={values.stateInputs}
       />
-    </div>
+      <div>
+        <Button type={"submit"} text={"safe"} />
+        <Button type={"submit"} text={"edit"} />
+      </div>
+    </form>
   );
 }
 
