@@ -1,12 +1,15 @@
 import { Description } from "./Description";
 import { InputForm } from "./InputForm";
+import Button from "./Button"
+
+const handleSafe = () => "g"
 
 export default function GeneralInformation({ dataInfo, receiveDataUser }) {
   const handleChange = ({target}) => {
     receiveDataUser(target.name,target.value)
   }
   return (
-    <>
+    <form>
       <Picture />
       <InputForm
         name={"name"}
@@ -20,7 +23,7 @@ export default function GeneralInformation({ dataInfo, receiveDataUser }) {
         onFunction={handleChange}
         value={dataInfo.surname}
       />
-       <InputForm
+      <InputForm
         name={"email"}
         text={"Email"}
         type={"email"}
@@ -52,15 +55,17 @@ export default function GeneralInformation({ dataInfo, receiveDataUser }) {
         value={dataInfo.description}
         onFunction={handleChange}
       />
-    </>
+      <Button type={"submit"} text={"Safe"} onFunction={handleSafe}/>
+    </form>
   );
 }
+
 
 const Picture = () => {
   return (
     <div>
       <label>picture</label>
-      <button className="import" type="button">
+      <button className="import" type="button" >
         <span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -72,6 +77,9 @@ const Picture = () => {
           </svg>
         </span>
       </button>
+      <dialog className="dialog__img">
+          <input type="file"></input>
+      </dialog> 
     </div>
   );
 };
