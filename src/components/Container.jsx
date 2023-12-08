@@ -1,9 +1,9 @@
 import UserInformation from "./UserInformation";
 import { Resume } from "./Resume";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { v1 as uuid } from "uuid";
 import { createNewArray } from "../helpers/createNewArray";
-// import { changeStateInputs } from "../helpers/changeStateInputs";
+
 const Container = () => {
   const [dataInfo, setDataInfo] = useState({
     name: "",
@@ -91,24 +91,36 @@ const Container = () => {
     }
   };
 
-  const handleInputsEducation = (element, state) => {
-    let newState; 
+  const handleInputState = (element, state = "") => {
+    let actualState;
+    let setValue;
+    let newState;
+
+    if (!state || !element) return;
+    if (state === "profession") {
+      actualState = professionalValues;
+      setValue = setProfessional;
+    }
+    if (state === "education") {
+      actualState = educationalValues;
+      setValue = setEducational;
+    }
     if (element === "safe") {
-      newState = educationalValues.map((el) => {
+      newState = actualState.map((el) => {
         return {
           ...el,
           stateInputs: true,
         };
       });
     } else {
-      newState = educationalValues.map((el) => {
+      newState = actualState.map((el) => {
         return {
           ...el,
           stateInputs: false,
         };
       });
     }
-    setEducational(newState);
+    setValue(newState);
   };
 
   return (
@@ -121,9 +133,13 @@ const Container = () => {
         receiveData={receiveData}
         addMoreContent={addMoreContent}
         deleteContent={deleteContent}
-        handleInputsEducation={handleInputsEducation}
+        handleInputState={handleInputState}
       />
-      <Resume />
+      <Resume
+        dataInfo={dataInfo}
+        educationalValues={educationalValues}
+        professionalValues={professionalValues}
+      />
     </section>
   );
 };
