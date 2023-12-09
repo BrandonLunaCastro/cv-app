@@ -2,7 +2,8 @@ export const InputForm = ({
   name,
   text = "input",
   type = "text",
-  state = false
+  state = false,
+  onFunction
 }) => {
   return (
     <label> 
@@ -11,6 +12,7 @@ export const InputForm = ({
         type={type}
         name={name}
         id={name}
+        onChange={onFunction}
         disabled={state}
       ></input>
     </label>
