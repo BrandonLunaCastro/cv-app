@@ -84,8 +84,7 @@ const UserInformation = ({
                       values={value}
                       receiveData={receiveData}
                       key={value.id}
-                    />
-                  
+                    />                 
                 </div>
               );
             })}
