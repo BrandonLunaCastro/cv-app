@@ -1,61 +1,56 @@
 import { Description } from "./Description";
 import { InputForm } from "./InputForm";
 import Button from "./Button"
-
-const handleSafe = () => "g"
+/* import { formData } from "../helpers/formData"; */
 
 export default function GeneralInformation({ dataInfo, receiveDataUser }) {
-  const handleChange = ({target}) => {
-    receiveDataUser(target.name,target.value)
+  const handleSubmit = (event) => {  
+    event.preventDefault();
+    console.log(event.target.closest())  
+
   }
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <Picture />
       <InputForm
         name={"name"}
         text={"Name"}
-        onFunction={handleChange}
-        value={dataInfo.name}
-      />
+        state={dataInfo.stateInputs}
+        />
       <InputForm
         name={"surname"}
         text={"Surname"}
-        onFunction={handleChange}
-        value={dataInfo.surname}
+        state={dataInfo.stateInputs}
       />
       <InputForm
         name={"email"}
         text={"Email"}
         type={"email"}
-        onFunction={handleChange}
-        value={dataInfo.email}
+        state={dataInfo.stateInputs}
       />
       <InputForm
         name={"telephone"}
         text={"Telephone"}
         type={"tel"}
-        onFunction={handleChange}
-        value={dataInfo.telephone}
+        state={dataInfo.stateInputs}
       />
       <InputForm
         name={"location"}
         text={"Location"}
-        onFunction={handleChange}
-        value={dataInfo.location}
+        state={dataInfo.stateInputs}
       />
       <InputForm
         name={"social"}
         text={"Social Media"}
-        onFunction={handleChange}
-        value={dataInfo.social}
+        state={dataInfo.stateInputs}
       />
       <Description 
         name={"description"}
         text={"Description"}
-        value={dataInfo.description}
-        onFunction={handleChange}
+        state={dataInfo.stateInputs}
       />
-      <Button type={"submit"} text={"Safe"} onFunction={handleSafe}/>
+      <Button type={"button"} text={"Safe"}/>
+      <Button type={"button"} text={"Edit"} />
     </form>
   );
 }
