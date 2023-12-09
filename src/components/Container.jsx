@@ -14,6 +14,7 @@ const Container = () => {
     location: "",
     social: "",
     description: "",
+    stateInputs: false
   });
   const [educationalValues, setEducational] = useState([
     {
@@ -37,8 +38,10 @@ const Container = () => {
     },
   ]);
 
-  const receiveDataUser = (input, value) => {
-    setDataInfo({ ...dataInfo, [input]: value });
+  const receiveDataUser = (object) => {
+    console.log(object)
+    setDataInfo({...object, stateInputs: true})
+    /* setDataInfo({ ...dataInfo, [input]: value }); */
   };
 
   const receiveData = (input, value, id, component) => {
