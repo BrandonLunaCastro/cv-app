@@ -1,7 +1,6 @@
 import { Description } from "./Description";
 import { InputForm } from "./InputForm";
 import Button from "./Button";
-/* import { formData } from "../helpers/formData"; */
 
 export default function GeneralInformation({
   dataInfo,
