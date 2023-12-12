@@ -2,6 +2,8 @@ export const Description = ({
   name = "input",
   text = "description",
   state = false,
+  onFunction = () => {},
+  value,
 }) => {
   return (
     <label>
@@ -9,6 +11,8 @@ export const Description = ({
       <textarea
         name={name}
         disabled={state}
+        onChange={onFunction}
+        value={value}
       ></textarea>
     </label>
   );
