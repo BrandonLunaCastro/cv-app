@@ -8,11 +8,14 @@
     gap: 25px;
     flex-basis: 40rem;
     flex-grow: 60%;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .content__editable {
-    background-color: #555;
-    color: aliceblue;
+    background-color: #fff;
+    color: #000;
     border-radius: 10px;
     padding: 10px;
 }
