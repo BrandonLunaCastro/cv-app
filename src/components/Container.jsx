@@ -56,15 +56,16 @@ const Container = () => {
   const addMoreContent = (value) => {
     if (!value) return;
     if (value === "education") {
+      console.log()
       const newObject = {
         school: "",
         title: "",
         dateStart: "",
         dateEnd: "",
         id: uuid(),
-        stateInputs: false,
+        stateInputs: educationalValues.at(-1).stateInputs,
       };
-      setEducational(educationalValues.concat(newObject));
+      setEducational([...educationalValues,newObject]);
     }
     if (value === "profession") {
       const newObject = {
@@ -74,9 +75,9 @@ const Container = () => {
         dateStartWork: "",
         dateEndWork: "",
         id: uuid(),
-        stateInputs: false,
-      };
-      setProfessional(professionalValues.concat(newObject));
+        stateInputs: professionalValues.at(-1).stateInputs,
+      };  
+      setProfessional([...professionalValues, newObject]);
     }
   };
 
@@ -92,27 +93,21 @@ const Container = () => {
       setEducational(filtered);
     }
   };
-
-  const handleInputState = (element, state = "") => {
-    let actualState;
-    let setValue;
+  const changeState = (state, condition) => {
     let newState;
-    if (!state || !element) return;
-    if (state === "profession") {
-      actualState = professionalValues;
-      setValue = setProfessional;
+    if ( state === "general" ) {
+      setDataInfo({...dataInfo, stateInputs: condition});
+    } 
+    if ( state === "education") {
+      newState = changeStateInput(educationalValues, "stateInputs", condition);
+      setEducational(newState);
     }
-    if (state === "education") {
-      actualState = educationalValues;
-      setValue = setEducational;
+    if ( state === "profession") {
+      newState = changeStateInput(professionalValues, "stateInputs", condition);
+      setProfessional(newState);
     }
-    if (element === "safe") {
-      newState = changeStateInput(actualState, "stateInputs", true);
-    } else {
-      newState = changeStateInput(actualState, "stateInputs", false);
-    }
-    setValue(newState);
-  };
+  }
+
   return (
     <section className="container">
       <UserInformation
@@ -123,7 +118,7 @@ const Container = () => {
         receiveData={receiveData}
         addMoreContent={addMoreContent}
         deleteContent={deleteContent}
-        handleInputState={handleInputState}
+        changeState={changeState}
       />
       <Resume
         dataInfo={dataInfo}
