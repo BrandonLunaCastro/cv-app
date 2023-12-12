@@ -3,6 +3,8 @@ import Education from "./Education";
 import GeneralInformation from "./GeneralInformation";
 import Professional from "./Professional";
 import Button from "./Button";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import { ResumePDF } from "./ResumePDF";
 
 const UserInformation = ({
   dataInfo,
@@ -32,12 +34,12 @@ const UserInformation = ({
 
   const submitProfession = (e) => {
     e.preventDefault();
-    changeState("profession", true)
-  }
+    changeState("profession", true);
+  };
 
   const EditProfession = () => {
-    changeState("profession", false)
-  }
+    changeState("profession", false);
+  };
 
   const addSvg = (
     <svg
@@ -163,7 +165,7 @@ const UserInformation = ({
               );
             })}
             <article>
-            <Button
+              <Button
                 onFunction={() => addMoreContent("profession")}
                 element={addSvg}
               />
@@ -176,6 +178,27 @@ const UserInformation = ({
             </article>
           </form>
         )}
+      </article>
+      <article>
+        <PDFDownloadLink
+          document={
+            <ResumePDF
+              dataInfo={dataInfo}
+              educationalValues={educationalValues}
+              professionalValues={professionalValues}
+            />
+          }
+          fileName="myfirst.pdf"
+        >
+          {({loading,url,error,blob}) => 
+            loading ? (
+              <button>Loading document... </button>
+            ) : (
+              <button>Download now!</button>
+            )
+          }
+
+        </PDFDownloadLink>
       </article>
     </section>
   );
