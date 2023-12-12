@@ -3,29 +3,40 @@ import { InputForm } from "./InputForm";
 import Button from "./Button";
 /* import { formData } from "../helpers/formData"; */
 
-export default function GeneralInformation({ dataInfo, receiveDataUser }) {
-  const handleClick = (e) => {
-    const className = e.target.className;
-    if (className === "edit") {
-      receiveDataUser(false);
-    }
-    if (className === "safe") {
-      receiveDataUser(true);
-    }
+export default function GeneralInformation({
+  dataInfo,
+  receiveDataUser,
+  changeState,
+}) {
+  const handleEdit = () => {
+    changeState("general", false);
   };
-  const handleChange = ({target}) => {
-    receiveDataUser(target.name, target.value)
-  }
+
+  const handleChange = ({ target }) => {
+    receiveDataUser(target.name, target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    changeState("general", true);
+  };
 
   return (
-    <div>
+    <form>
       <Picture />
-      <InputForm name={"name"} text={"Name"} state={dataInfo.stateInputs} />
+      <InputForm
+        name={"name"}
+        text={"Name"}
+        onFunction={handleChange}
+        state={dataInfo.stateInputs}
+        value={dataInfo.name}
+      />
       <InputForm
         name={"surname"}
         text={"Surname"}
         onFunction={handleChange}
         state={dataInfo.stateInputs}
+        value={dataInfo.surname}
       />
       <InputForm
         name={"email"}
@@ -33,6 +44,7 @@ export default function GeneralInformation({ dataInfo, receiveDataUser }) {
         type={"email"}
         onFunction={handleChange}
         state={dataInfo.stateInputs}
+        value={dataInfo.email}
       />
       <InputForm
         name={"telephone"}
@@ -40,38 +52,42 @@ export default function GeneralInformation({ dataInfo, receiveDataUser }) {
         onFunction={handleChange}
         type={"tel"}
         state={dataInfo.stateInputs}
+        value={dataInfo.telephone}
       />
       <InputForm
         name={"location"}
         text={"Location"}
         onFunction={handleChange}
         state={dataInfo.stateInputs}
+        value={dataInfo.location}
       />
       <InputForm
         name={"social"}
         text={"Social Media"}
         onFunction={handleChange}
         state={dataInfo.stateInputs}
+        value={dataInfo.social}
       />
       <Description
         name={"description"}
         text={"Description"}
         onFunction={handleChange}
         state={dataInfo.stateInputs}
+        value={dataInfo.description}
       />
       <Button
-        type={"button"}
+        type={"submit"}
         text={"Safe"}
-        onFunction={handleClick}
+        onFunction={handleSubmit}
         className={"safe"}
       />
       <Button
         type={"button"}
         text={"Edit"}
-        onFunction={handleClick}
+        onFunction={handleEdit}
         className={"edit"}
       />
-    </div>
+    </form>
   );
 }
 
