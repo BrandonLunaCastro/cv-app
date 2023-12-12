@@ -14,7 +14,7 @@ const Container = () => {
     location: "",
     social: "",
     description: "",
-    stateInputs: false
+    stateInputs: false,
   });
   const [educationalValues, setEducational] = useState([
     {
@@ -38,7 +38,7 @@ const Container = () => {
     },
   ]);
 
-  const receiveDataUser = (input, value) => { 
+  const receiveDataUser = (input, value) => {
     setDataInfo({ ...dataInfo, [input]: value });
   };
 
@@ -56,16 +56,17 @@ const Container = () => {
   const addMoreContent = (value) => {
     if (!value) return;
     if (value === "education") {
-      console.log()
       const newObject = {
         school: "",
         title: "",
         dateStart: "",
         dateEnd: "",
         id: uuid(),
-        stateInputs: educationalValues.at(-1).stateInputs,
+        stateInputs: !educationalValues.length
+          ? false
+          : educationalValues.at(-1).stateInputs,
       };
-      setEducational([...educationalValues,newObject]);
+      setEducational([...educationalValues, newObject]);
     }
     if (value === "profession") {
       const newObject = {
@@ -75,8 +76,10 @@ const Container = () => {
         dateStartWork: "",
         dateEndWork: "",
         id: uuid(),
-        stateInputs: professionalValues.at(-1).stateInputs,
-      };  
+        stateInputs: !professionalValues.length
+          ? false
+          : professionalValues.at(-1).stateInputs,
+      };
       setProfessional([...professionalValues, newObject]);
     }
   };
@@ -95,18 +98,18 @@ const Container = () => {
   };
   const changeState = (state, condition) => {
     let newState;
-    if ( state === "general" ) {
-      setDataInfo({...dataInfo, stateInputs: condition});
-    } 
-    if ( state === "education") {
+    if (state === "general") {
+      setDataInfo({ ...dataInfo, stateInputs: condition });
+    }
+    if (state === "education") {
       newState = changeStateInput(educationalValues, "stateInputs", condition);
       setEducational(newState);
     }
-    if ( state === "profession") {
+    if (state === "profession") {
       newState = changeStateInput(professionalValues, "stateInputs", condition);
       setProfessional(newState);
     }
-  }
+  };
 
   return (
     <section className="container">
