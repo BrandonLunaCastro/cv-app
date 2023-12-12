@@ -1,5 +1,4 @@
 import { InputForm } from "./InputForm";
-import Button from "./Button";
 
 function Education({ values, receiveData }) {
   const handleChange = ({ target }) => {
