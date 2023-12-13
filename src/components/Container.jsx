@@ -5,6 +5,8 @@ import { v1 as uuid } from "uuid";
 import { createNewArray } from "../helpers/createNewArray";
 import { changeStateInput } from "../helpers/changeStateInput";
 import { useReactToPrint } from "react-to-print";
+// import ReactToPrint from "react-to-print";
+
 
 const Container = () => {
   const [dataInfo, setDataInfo] = useState({
@@ -115,6 +117,8 @@ const Container = () => {
   const componentRef = useRef();
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
+    documentTitle:"emp-data",
+    onAfterPrint: () => alert("Print success")
   });
 
 
@@ -131,7 +135,6 @@ const Container = () => {
           deleteContent={deleteContent}
           changeState={changeState}
         />
-        <button onClick={handlePrint}>print PDF</button>
       </div>
       <Resume
         dataInfo={dataInfo}
@@ -139,6 +142,7 @@ const Container = () => {
         professionalValues={professionalValues}
         ref={componentRef}
       />
+      <button onClick={handlePrint}>print PDF</button>
     </section>
   );
 };
