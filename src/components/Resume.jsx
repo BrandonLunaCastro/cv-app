@@ -1,8 +1,7 @@
 import { verifyState } from "../helpers/verifyState";
 import EducationExperience from "./EducationExperience";
 import ProfessionExperience from "./ProfessionExperience";
-import ShowGeneral from "./showGeneral";
-
+import ShowGeneral from "./ShowGeneral"
 
 export const Resume = ({ dataInfo, educationalValues, professionalValues }) => {
   return (
