@@ -1,9 +1,10 @@
 import UserInformation from "./UserInformation";
 import { Resume } from "./Resume";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { v1 as uuid } from "uuid";
 import { createNewArray } from "../helpers/createNewArray";
 import { changeStateInput } from "../helpers/changeStateInput";
+import { useReactToPrint } from "react-to-print";
 
 const Container = () => {
   const [dataInfo, setDataInfo] = useState({
@@ -111,22 +112,32 @@ const Container = () => {
     }
   };
 
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
+
+
   return (
     <section className="container">
-      <UserInformation
-        dataInfo={dataInfo}
-        educationalValues={educationalValues}
-        professionalValues={professionalValues}
-        receiveDataUser={receiveDataUser}
-        receiveData={receiveData}
-        addMoreContent={addMoreContent}
-        deleteContent={deleteContent}
-        changeState={changeState}
-      />
+      <div>
+        <UserInformation
+          dataInfo={dataInfo}
+          educationalValues={educationalValues}
+          professionalValues={professionalValues}
+          receiveDataUser={receiveDataUser}
+          receiveData={receiveData}
+          addMoreContent={addMoreContent}
+          deleteContent={deleteContent}
+          changeState={changeState}
+        />
+        <button onClick={handlePrint}>print PDF</button>
+      </div>
       <Resume
         dataInfo={dataInfo}
         educationalValues={educationalValues}
         professionalValues={professionalValues}
+        ref={componentRef}
       />
     </section>
   );
