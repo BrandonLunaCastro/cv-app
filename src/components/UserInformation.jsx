@@ -14,6 +14,7 @@ const UserInformation = ({
   addMoreContent,
   deleteContent,
   changeState,
+  changeImage
 }) => {
   const [show, setShow] = useState(0);
   const handleClick = (val) => {
@@ -85,6 +86,7 @@ const UserInformation = ({
             dataInfo={dataInfo}
             receiveDataUser={receiveDataUser}
             changeState={changeState}
+            changeImage={changeImage}
           />
         )}
       </article>
