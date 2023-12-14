@@ -1,7 +1,7 @@
 function ShowGeneral({dataInfo}) {
   return (
     <>
-      <img alt=""></img>
+      <img src={dataInfo.img} alt="user image"></img>
       <p className="description">Description</p>
       <p>{dataInfo.description}</p>
       <p className="contact">Contact</p>
