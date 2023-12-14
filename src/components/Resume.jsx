@@ -1,11 +1,12 @@
+import React from "react";
 import { verifyState } from "../helpers/verifyState";
 import EducationExperience from "./EducationExperience";
 import ProfessionExperience from "./ProfessionExperience";
 import ShowGeneral from "./ShowGeneral"
 
-export const Resume = ({ dataInfo, educationalValues, professionalValues }) => {
+export const Resume = React.forwardRef(({ dataInfo, educationalValues, professionalValues }, ref) => {
   return (
-    <section className="resume">
+    <section className="resume" ref={ref}>
       <section className="left">
           {
             dataInfo.stateInputs && 
@@ -28,4 +29,4 @@ export const Resume = ({ dataInfo, educationalValues, professionalValues }) => {
       </section>
     </section>
   );
-};
+});
