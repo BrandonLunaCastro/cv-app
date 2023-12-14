@@ -6,6 +6,7 @@ export default function GeneralInformation({
   dataInfo,
   receiveDataUser,
   changeState,
+  changeImage
 }) {
   const handleEdit = () => {
     changeState("general", false);
@@ -22,7 +23,7 @@ export default function GeneralInformation({
 
   return (
     <form>
-      <Picture />
+      <Picture changeImage={changeImage}/>
       <InputForm
         name={"name"}
         text={"Name"}
@@ -90,12 +91,12 @@ export default function GeneralInformation({
   );
 }
 
-const Picture = () => {
+const Picture = ({changeImage}) => {
   return (
     <div>
       <label>picture</label>
       <button className="import" type="button">
-        <span>
+        <label for="file" >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="16"
@@ -104,11 +105,9 @@ const Picture = () => {
           >
             <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
           </svg>
-        </span>
+        </label>
       </button>
-      <dialog className="dialog__img">
-        <input type="file"></input>
-      </dialog>
+      <input id="file" type="file" onChange={changeImage}></input>
     </div>
   );
 };
