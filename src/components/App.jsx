@@ -4,7 +4,7 @@ import Container from "./Container";
 function App() {
   return (
     <>
-      <Header />
+      <Header text={"CV-Generator"} />
       <Container />
     </>
   );
