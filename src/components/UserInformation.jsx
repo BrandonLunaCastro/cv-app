@@ -3,7 +3,7 @@ import Education from "./Education";
 import GeneralInformation from "./GeneralInformation";
 import Professional from "./Professional";
 import Button from "./Button";
-
+import "../styles/UserInformation.css";
 
 const UserInformation = ({
   dataInfo,
@@ -73,7 +73,7 @@ const UserInformation = ({
     </svg>
   ); */
   return (
-    <section className="content">
+    <section className="content__information">
       <article className="content__editable">
         <div>
           <p>

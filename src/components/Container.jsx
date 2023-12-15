@@ -5,6 +5,7 @@ import { v1 as uuid } from "uuid";
 import { createNewArray } from "../helpers/createNewArray";
 import { changeStateInput } from "../helpers/changeStateInput";
 import ReactToPrint from "react-to-print";
+import "../styles/Container.css"
 
 const Container = () => {
   const [dataInfo, setDataInfo] = useState({
@@ -122,21 +123,13 @@ const Container = () => {
       }
       reader.readAsDataURL(e.target.files[[0]])
     }
-    /*  
-    }
-    const handleFile = (e) => {
-      if (e.target.files[0]) {
-        const reader = new FileReader()
-      } else {
-
-    } */
   }
 
 
   const componentRef = useRef();
   return (
     <section className="container">
-      <div>
+      <div className="content">
         <UserInformation
           dataInfo={dataInfo}
           educationalValues={educationalValues}

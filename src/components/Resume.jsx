@@ -3,6 +3,8 @@ import { verifyState } from "../helpers/verifyState";
 import EducationExperience from "./EducationExperience";
 import ProfessionExperience from "./ProfessionExperience";
 import ShowGeneral from "./ShowGeneral"
+import "../styles/Resume.css"
+
 
 export const Resume = React.forwardRef(({ dataInfo, educationalValues, professionalValues }, ref) => {
   return (
