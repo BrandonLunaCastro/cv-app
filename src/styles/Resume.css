@@ -1,0 +1,17 @@
+.resume {
+    border: 1px solid gray;
+    display: flex;
+    min-height: 700px;
+    flex-basis: 35rem;
+}
+
+.left {
+    color: #fff;
+    background-color: #333;
+    flex-basis: 15rem;
+}
+
+.right {
+    background-color: #cecece;
+    flex-basis: 20rem;
+}

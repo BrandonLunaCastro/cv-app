@@ -1,16 +1,29 @@
-.container {
-    display: flex;
-    gap: 30px;
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
-.content {
+
+
+#root {
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    flex-basis: 40rem;
-    flex-grow: 60%;
+}
+
+/* .content {
     background-color: #222;
+    display: flex;
     padding: 10px;
     border-radius: 10px;
+    flex-grow: 40%;
+    flex-basis: 20rem;
+} */
+
+/* .content > * {  
+    gap: 25px;
+    flex-direction: column;
 }
 
 .content__editable {
@@ -35,4 +48,4 @@
 
 #file {
     display: none;
-}
+} */

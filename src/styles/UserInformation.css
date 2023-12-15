@@ -1,0 +1,30 @@
+.content {
+    background-color: #333;
+    color: #fff;
+    flex-basis: 20rem;
+    min-height: 500px;
+    border-radius: 5px;
+}
+
+.content__information {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 10px;
+}
+
+.content__editable {
+    background-color: #fefefe;
+    color: #333;
+    border-radius: 10px;
+
+}
+
+.content__editable > div {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content > * {
+}
