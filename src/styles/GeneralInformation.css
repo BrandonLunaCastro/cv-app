@@ -1,15 +1,12 @@
 .general__information {
   display: grid;
-  grid-template-columns: repeat(5, 6rem);
-  grid-template-rows: repeat(5, 6rem);
+  grid-template-columns: repeat(5, 5rem);
+  grid-template-rows: repeat(5, 4rem);
   justify-items: stretch;
   align-items: center ;
+  gap: 10px;
+  padding: 10px;
 }
-/* 
-label {
-  display: flex;
-  flex-direction: column;
-} */
 
 #file {
   display: none;
@@ -17,7 +14,12 @@ label {
 
 .picture {
   grid-row: 1/3;
-  
+  align-items: stretch;
+  align-self: center;
+}
+
+.picture > button {
+  height: 6rem;
 }
 
 .name {
@@ -47,13 +49,29 @@ label {
 .telephone,
 .social,
 .location,
-.description {
+.description,
+.picture {
   display: flex;
   flex-direction: column;
 }
 
-
-
 #description {
   resize: none;
+}
+
+.safe, 
+.edit {
+  align-self: flex-end;
+  background-color: #FF2E63;
+  border: none;
+  height: 2rem;
+  border-radius: 5px;
+  color: #EAEAEA;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.safe:hover, 
+.edit:hover {
+  transform: translateY(-2px);
 }
