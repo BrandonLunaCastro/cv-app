@@ -1,0 +1,43 @@
+#delete {
+  display: block;
+  margin: 0 auto;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.show__education {
+  display: grid;
+  grid-template-columns: repeat(5, 5rem) ;
+  grid-template-rows: repeat(3,4rem);
+  ;
+}
+
+.container__education {
+  padding: 10px;
+}
+
+
+.school,
+.title {
+  grid-column: 1/ -1;
+}
+
+.dateStart {
+  grid-column: 1/3;
+}
+
+.dateEnd {
+  grid-column: 4/6;
+}
+
+
+.school,
+.title,
+.dateStart,
+.dateEnd {
+  display: flex;
+  flex-direction: column;
+}
