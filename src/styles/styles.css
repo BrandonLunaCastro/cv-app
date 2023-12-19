@@ -1,52 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Saira+Stencil+One&display=swap");
+
 *,
 ::before,
 ::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif
+  font-family: "Poppins", sans-serif;
 }
 
 #root {
   display: flex;
   flex-direction: column;
 }
-
-/* .content {
-    background-color: #222;
-    display: flex;
-    padding: 10px;
-    border-radius: 10px;
-    flex-grow: 40%;
-    flex-basis: 20rem;
-} */
-
-/* .content > * {  
-    gap: 25px;
-    flex-direction: column;
-}
-
-.content__editable {
-    background-color: #fff;
-    color: #000;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-.resume {
-    display: flex;
-    border: 2px solid #333;
-    flex-basis: 25rem;
-    flex-grow: 80%;
-}
-
-.left {
-    border-right: 2px solid #333;
-    background-color: #222;
-    color: #fefefe;
-}
-
-#file {
-    display: none;
-} */
