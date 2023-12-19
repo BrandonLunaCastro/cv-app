@@ -1,6 +1,7 @@
 import { Description } from "./Description";
 import { InputForm } from "./InputForm";
 import Button from "./Button";
+import "../styles/GeneralInformation.css";  
 
 export default function GeneralInformation({
   dataInfo,
@@ -22,7 +23,7 @@ export default function GeneralInformation({
   };
 
   return (
-    <form>
+    <form className="general__information">
       <Picture changeImage={changeImage}/>
       <InputForm
         name={"name"}
@@ -93,10 +94,10 @@ export default function GeneralInformation({
 
 const Picture = ({changeImage}) => {
   return (
-    <div>
+    <div className="picture">
       <label>picture</label>
       <button className="import" type="button">
-        <label for="file" >
+        <label htmlFor="file" >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="16"
