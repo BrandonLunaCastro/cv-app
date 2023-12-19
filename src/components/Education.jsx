@@ -1,11 +1,12 @@
 import { InputForm } from "./InputForm";
+import "../styles/ShowEducation.css"
 
 function Education({ values, receiveData }) {
   const handleChange = ({ target }) => {
     receiveData(target.name, target.value, values.id, "education");
   };
   return (
-    <>
+    <div className="show__education">
       <InputForm
         name={"school"}
         text={"School Name"}
@@ -36,7 +37,7 @@ function Education({ values, receiveData }) {
         value={values.dateEnd}
         state={values.stateInputs}
       />
-    </>
+    </div>
   );
 }
 
