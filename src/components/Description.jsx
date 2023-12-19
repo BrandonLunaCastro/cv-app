@@ -6,13 +6,14 @@ export const Description = ({
   value,
 }) => {
   return (
-    <label>
+    <label className={name}>
       {text}:
       <textarea
         name={name}
         disabled={state}
         onChange={onFunction}
         value={value}
+        id={name}
       ></textarea>
     </label>
   );
