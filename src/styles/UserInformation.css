@@ -15,16 +15,13 @@
 
 .content__editable {
     background-color: #fefefe;
-    color: #333;
+    color: #252A34;
     border-radius: 10px;
-
+    
 }
 
 .content__editable > div {
     padding: 10px;
     display: flex;
     justify-content: space-between;
-}
-
-.content > * {
 }
