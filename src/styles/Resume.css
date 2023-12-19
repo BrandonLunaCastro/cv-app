@@ -1,45 +1,45 @@
 .resume {
-    display: flex;
-    min-height: 700px;
-    max-width: 35rem;
-    flex-basis: 35rem;
-    box-shadow: 2px 2px 8px #cecece;
+  display: flex;
+  min-height: 700px;
+  max-width: 35rem;
+  flex-basis: 35rem;
+  box-shadow: 2px 2px 8px #cecece;
 }
 
 .left {
-    color: #000;
-    background-color: #08D9D6;
-    flex-basis: 15rem;
-    max-width: 15rem;
+  color: #000;
+  background-color: #08d9d6;
+  flex-basis: 15rem;
+  max-width: 15rem;
 }
 
 .left > * {
-    padding: 10px;
+  padding: 10px;
 }
 
 .right {
-    background-color: #EAEAEA;
-    flex-basis: 20rem;
+  background-color: #eaeaea;
+  flex-basis: 20rem;
 }
 
 .right > * {
-    padding: 10px;
+  padding: 10px;
 }
 
 .education {
-    text-transform: uppercase;
-    font-weight: 800;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap:10px;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .profession {
-    text-transform: uppercase;
-    font-weight: 800;
-    font-size: 1.5rem;     
-    display: flex;
-    align-items: center;
-    gap:10px;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
