@@ -7,7 +7,7 @@ export const InputForm = ({
   value
 }) => {
   return (
-    <label> 
+    <label className={name}> 
       {text}:
       <input
         type={type}
