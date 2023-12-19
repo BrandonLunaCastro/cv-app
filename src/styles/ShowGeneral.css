@@ -1,43 +1,41 @@
 #user__image {
-    display: block;
-    border-radius: 100%;
-    margin: 10px auto;
-    max-width: 15rem;
-    max-height: 15rem;
-    object-fit: contain;
+  display: block;
+  border-radius: 100%;
+  margin: 10px auto;
+  max-width: 15rem;
+  max-height: 15rem;
+  object-fit: contain;
 }
 
 .description {
-    font-size: 2rem;
-    font-weight: bolder;
+  font-weight: bolder;
 }
 
 .data__description {
-    display: block;
-    text-align: center;
+  display: block;
+  text-align: center;
 }
 
 .contact {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
 }
 
 .data {
-    padding: 10px;
-
+  padding: 10px;
 }
 
 .data > li > svg {
-    width: 2.2rem;
-    height: 2.2rem;
+  width: 2.2rem;
+  height: 2.2rem;
 }
 
-.data > li{
-    list-style-type: none;
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    font-size: 1rem;
-    margin: 10px;
+.data > li {
+  list-style-type: none;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  font-size: 1rem;
+  margin: 10px;
 }
