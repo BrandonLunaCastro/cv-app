@@ -14,7 +14,7 @@ const UserInformation = ({
   addMoreContent,
   deleteContent,
   changeState,
-  changeImage
+  changeImage,
 }) => {
   const [show, setShow] = useState(0);
   const handleClick = (val) => {
@@ -101,8 +101,8 @@ const UserInformation = ({
           <form onSubmit={SubmitEducation}>
             {educationalValues.map((value) => {
               return (
-                <div key={value.id}>
-                  <button onClick={() => deleteContent("education", value.id)}>
+                <div key={value.id} className="container__education">
+                  <button id="delete" onClick={() => deleteContent("education", value.id)}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       height="16"
@@ -120,17 +120,19 @@ const UserInformation = ({
                 </div>
               );
             })}
-            <article>
+            <article className="buttons">
               <Button
                 onFunction={() => addMoreContent("education")}
                 element={addSvg}
               />
-              <Button type={"submit"} text={"safe"} />
-              <Button
-                type={"button"}
-                text={"edit"}
-                onFunction={EditEducation}
-              />
+              <div>
+                <Button type={"submit"} text={"safe"} />
+                <Button
+                  type={"button"}
+                  text={"edit"}
+                  onFunction={EditEducation}
+                />
+              </div>
             </article>
           </form>
         )}
@@ -180,7 +182,6 @@ const UserInformation = ({
           </form>
         )}
       </article>
-
     </section>
   );
 };
