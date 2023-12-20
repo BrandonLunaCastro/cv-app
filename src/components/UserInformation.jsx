@@ -127,6 +127,7 @@ const UserInformation = ({
               <Button
                 onFunction={() => addMoreContent("education")}
                 element={addSvg}
+                className="add__more"
               />
               <div>
                 <Button type={"submit"} text={"safe"} className={"safe"}/>
@@ -178,6 +179,7 @@ const UserInformation = ({
               <Button
                 onFunction={() => addMoreContent("profession")}
                 element={addSvg}
+                className="add__more"
               />
               <div>
                 <Button type={"submit"} text={"safe"} className={"safe"}/>
