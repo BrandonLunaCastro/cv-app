@@ -5,7 +5,7 @@ import { v1 as uuid } from "uuid";
 import { createNewArray } from "../helpers/createNewArray";
 import { changeStateInput } from "../helpers/changeStateInput";
 import ReactToPrint from "react-to-print";
-import "../styles/Container.css"
+import "../styles/Container.css";
 
 const Container = () => {
   const [dataInfo, setDataInfo] = useState({
@@ -65,9 +65,7 @@ const Container = () => {
         dateStart: "",
         dateEnd: "",
         id: uuid(),
-        stateInputs: !educationalValues.length
-          ? false
-          : educationalValues.at(-1).stateInputs,
+        stateInputs: false,
       };
       setEducational([...educationalValues, newObject]);
     }
@@ -79,9 +77,7 @@ const Container = () => {
         dateStartWork: "",
         dateEndWork: "",
         id: uuid(),
-        stateInputs: !professionalValues.length
-          ? false
-          : professionalValues.at(-1).stateInputs,
+        stateInputs: false,
       };
       setProfessional([...professionalValues, newObject]);
     }
@@ -115,16 +111,15 @@ const Container = () => {
   };
 
   const changeImage = (e) => {
-    if ( e.target.files[0] ) {
+    if (e.target.files[0]) {
       const reader = new FileReader();
-      reader.onload = function ( e ) {
-        console.log(e.target.result)
-        setDataInfo(prevState => ({...prevState, img: e.target.result}))
-      }
-      reader.readAsDataURL(e.target.files[[0]])
+      reader.onload = function (e) {
+        console.log(e.target.result);
+        setDataInfo((prevState) => ({ ...prevState, img: e.target.result }));
+      };
+      reader.readAsDataURL(e.target.files[[0]]);
     }
-  }
-
+  };
 
   const componentRef = useRef();
   return (
@@ -140,8 +135,8 @@ const Container = () => {
           deleteContent={deleteContent}
           changeState={changeState}
           changeImage={changeImage}
-          />
-        <ReactToPrint 
+        />
+        <ReactToPrint
           trigger={() => <button>Imprimir</button>}
           content={() => componentRef.current}
         />
@@ -152,7 +147,6 @@ const Container = () => {
         professionalValues={professionalValues}
         ref={componentRef}
       />
-      
     </section>
   );
 };
