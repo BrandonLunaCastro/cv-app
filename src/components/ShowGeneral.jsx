@@ -3,9 +3,9 @@ function ShowGeneral({ dataInfo }) {
   return (
     <>
       <img src={dataInfo.img} alt="user image" id="user__image"></img>
-      <p className="description">DESCRIPTION</p>
+      <p className="resume__description">DESCRIPTION</p>
       <p className="data__description">{dataInfo.description}</p>
-      <p className="contact">CONTACT</p>
+      <p className="resume__contact">CONTACT</p>
       <ul className="data">
         <li>
           <svg
