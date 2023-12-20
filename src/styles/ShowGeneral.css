@@ -7,16 +7,18 @@
   object-fit: contain;
 }
 
-/* .description {
-  font-weight: bolder;
-} */
+.resume__description {
+  font-weight: 600;
+  font-size: 1.8rem;
+  text-align: center;
+}
 
 .data__description {
   display: block;
   text-align: center;
 }
 
-.contact {
+.resume__contact {
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
@@ -26,7 +28,7 @@
   padding: 10px;
 }
 
-.data > li > svg {
+.data > li > svg   {
   width: 2.2rem;
   height: 2.2rem;
 }
