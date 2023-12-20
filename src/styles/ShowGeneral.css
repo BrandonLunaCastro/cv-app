@@ -7,9 +7,9 @@
   object-fit: contain;
 }
 
-.description {
+/* .description {
   font-weight: bolder;
-}
+} */
 
 .data__description {
   display: block;
