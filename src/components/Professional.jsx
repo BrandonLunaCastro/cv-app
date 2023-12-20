@@ -1,7 +1,7 @@
 import React from "react";
 import { InputForm } from "./InputForm";
 import { Description } from "./Description";
-
+import "../styles/Professional.css"
 export default function Professional({ value, receiveData }) {
   const handleChange = ({ target }) => {
     receiveData(target.name, target.value, value.id, "profession");
