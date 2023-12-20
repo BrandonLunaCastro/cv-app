@@ -1,10 +1,11 @@
 .content {
-    background-color: #333;
-    color: #fff;
-    flex-basis: 20rem;
-    min-height: 500px;
-    border-radius: 5px;
+    background-color: #171717;
+    color: #EDEDED;
+    flex-basis: 32rem;
+    min-height: 500px !important;
+    border-radius: 5px ;
 }
+
 
 .content__information {
     display: flex;
@@ -14,10 +15,9 @@
 }
 
 .content__editable {
-    background-color: #fefefe;
-    color: #252A34;
+    background-color: #EDEDED;
+    color: #444444;
     border-radius: 10px;
-    
 }
 
 .content__editable > div {
