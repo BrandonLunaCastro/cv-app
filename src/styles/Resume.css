@@ -3,12 +3,12 @@
   min-height: 700px;
   max-width: 35rem;
   flex-basis: 35rem;
-  box-shadow: 2px 2px 8px #cecece;
+  box-shadow: 2px 2px 8px #444444;
 }
 
 .left {
-  color: #000;
-  background-color: #08d9d6;
+  color: #EDEDEDED;
+  background-color: #444444;
   flex-basis: 15rem;
   max-width: 15rem;
 }
