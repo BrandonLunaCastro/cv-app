@@ -102,7 +102,10 @@ const UserInformation = ({
             {educationalValues.map((value) => {
               return (
                 <div key={value.id} className="container__education">
-                  <button id="delete" onClick={() => deleteContent("education", value.id)}>
+                  <button
+                    className="delete"
+                    onClick={() => deleteContent("education", value.id)}
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       height="16"
@@ -126,11 +129,12 @@ const UserInformation = ({
                 element={addSvg}
               />
               <div>
-                <Button type={"submit"} text={"safe"} />
+                <Button type={"submit"} text={"safe"} className={"safe"}/>
                 <Button
                   type={"button"}
                   text={"edit"}
                   onFunction={EditEducation}
+                  className={"edit"}
                 />
               </div>
             </article>
@@ -145,11 +149,14 @@ const UserInformation = ({
           <button onClick={() => handleClick(2)}>+</button>
         </div>
         {show === 2 && (
-          <form onSubmit={submitProfession}>
+          <form onSubmit={submitProfession} className="profession__form">
             {professionalValues.map((value) => {
               return (
                 <div key={value.id}>
-                  <button onClick={() => deleteContent("profession", value.id)}>
+                  <button
+                    className="delete"
+                    onClick={() => deleteContent("profession", value.id)}
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       height="16"
@@ -167,17 +174,20 @@ const UserInformation = ({
                 </div>
               );
             })}
-            <article>
+            <article className="buttons">
               <Button
                 onFunction={() => addMoreContent("profession")}
                 element={addSvg}
               />
-              <Button type={"submit"} text={"safe"} />
-              <Button
-                type={"button"}
-                text={"edit"}
-                onFunction={EditProfession}
-              />
+              <div>
+                <Button type={"submit"} text={"safe"} className={"safe"}/>
+                <Button
+                  type={"button"}
+                  text={"edit"}
+                  onFunction={EditProfession}
+                  className={"edit"}
+                />
+              </div>
             </article>
           </form>
         )}
