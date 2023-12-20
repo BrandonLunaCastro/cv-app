@@ -137,7 +137,7 @@ const Container = () => {
           changeImage={changeImage}
         />
         <ReactToPrint
-          trigger={() => <button>Imprimir</button>}
+          trigger={() => <button id="print" type="button">Print PDF</button>}
           content={() => componentRef.current}
         />
       </div>
