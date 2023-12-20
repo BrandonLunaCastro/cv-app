@@ -4,7 +4,7 @@
   grid-template-rows: repeat(5, 4rem);
   justify-items: stretch;
   align-items: center ;
-  gap: 10px;
+  gap: 15px;
   padding: 10px;
 }
 
@@ -62,7 +62,7 @@
 .safe, 
 .edit {
   align-self: flex-end;
-  background-color: #FF2E63;
+  background-color: #DA0037;
   border: none;
   height: 2rem;
   border-radius: 5px;
