@@ -2,16 +2,13 @@
   display: flex;
   min-height: 700px;
   max-height: 700px;
-  max-width: 35rem;
-  flex-basis: 35rem;
   box-shadow: 2px 2px 8px #444444;
 }
 
 .left {
   color: #EDEDEDED;
   background-color: #444444;
-  flex-basis: 15rem;
-  max-width: 15rem;
+  flex: 1 1 5rem;
 }
 
 .left > * {
@@ -21,6 +18,7 @@
 .right {
   background-color: #eaeaea;
   flex-basis: 20rem;
+  flex: 2;
 }
 
 .right > * {
