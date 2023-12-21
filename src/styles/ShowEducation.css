@@ -9,8 +9,7 @@
   padding: 10px 0;
 }
 .buttons > div {
-  /* border:1px solid blue; */
-  padding:0  15px;
+  padding: 0 15px;
 }
 
 .buttons > div > button {
@@ -20,8 +19,8 @@
 
 .show__education {
   display: grid;
-  grid-template-columns: repeat(5, 5rem) ;
-  grid-template-rows: repeat(3,4rem);
+  grid-template-columns: repeat(5, 5rem);
+  grid-template-rows: repeat(3, 4rem);
   gap: 15px;
 }
 
@@ -47,4 +46,9 @@
 .dateEnd {
   display: flex;
   flex-direction: column;
+}
+
+.school {     
+  font-size: 1.2rem;
+  font-weight: 700;
 }
