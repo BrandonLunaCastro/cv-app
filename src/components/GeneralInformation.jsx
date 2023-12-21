@@ -95,7 +95,7 @@ export default function GeneralInformation({
 const Picture = ({changeImage}) => {
   return (
     <div className="picture">
-      <label>picture</label>
+      <label>Picture</label>
       <button className="import" type="button">
         <label htmlFor="file" >
           <svg
