@@ -3,12 +3,13 @@
   min-height: 700px;
   max-height: 700px;
   box-shadow: 2px 2px 8px #444444;
+  flex-basis: 35rem;
 }
 
 .left {
   color: #EDEDEDED;
   background-color: #444444;
-  flex: 1 1 5rem;
+  flex: 1 1 15rem;
 }
 
 .left > * {
@@ -18,7 +19,7 @@
 .right {
   background-color: #eaeaea;
   flex-basis: 20rem;
-  flex: 2;
+  flex: 2 2 20rem;
 }
 
 .right > * {
