@@ -13,6 +13,7 @@ function Education({ values, receiveData }) {
         onFunction={handleChange}
         value={values.school}
         state={values.stateInputs}
+        className={"label__school"}
       />
       <InputForm
         name={"title"}
@@ -23,7 +24,7 @@ function Education({ values, receiveData }) {
       />
       <InputForm
         name={"dateStart"}
-        text={"Date of start study"}
+        text={"From"}
         type={"date"}
         onFunction={handleChange}
         value={values.dateStart}
@@ -31,7 +32,7 @@ function Education({ values, receiveData }) {
       />
       <InputForm
         name={"dateEnd"}
-        text={"Date of end study"}
+        text={"To"}
         type={"date"}
         onFunction={handleChange}
         value={values.dateEnd}
