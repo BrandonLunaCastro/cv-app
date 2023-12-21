@@ -43,3 +43,8 @@
   align-items: center;
   gap: 10px;
 }
+
+.full-name {
+  font-size: 2rem;
+}
+
