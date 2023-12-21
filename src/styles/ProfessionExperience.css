@@ -1,3 +1,8 @@
+.resume__company {
+    font-size: 1.2rem;
+    font-weight: 700;
+}  
+
 .profession__experience {
     margin-left: 20px;
     line-height: 20px;
