@@ -1,6 +1,7 @@
 .resume {
   display: flex;
   min-height: 700px;
+  max-height: 700px;
   max-width: 35rem;
   flex-basis: 35rem;
   box-shadow: 2px 2px 8px #444444;
