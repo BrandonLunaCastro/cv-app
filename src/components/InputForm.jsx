@@ -4,15 +4,16 @@ export const InputForm = ({
   type = "text",
   state = false,
   onFunction,
-  value
+  value,
+  className = name
+
 }) => {
   return (
-    <label className={name}> 
+    <label className={className}> 
       {text}:
       <input
         type={type}
         name={name}
-        id={name}
         onChange={onFunction}
         disabled={state}
         value={value}
