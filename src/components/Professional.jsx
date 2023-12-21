@@ -31,7 +31,7 @@ export default function Professional({ value, receiveData }) {
         />
       <InputForm
         onFunction={handleChange}
-        text={"Date we star work"}
+        text={"From"}
         type={"date"}
         name={"dateStartWork"}
         value={value.dateStartWork}
@@ -39,7 +39,7 @@ export default function Professional({ value, receiveData }) {
       />
       <InputForm
         onFunction={handleChange}
-        text={"Date we end work"}
+        text={"To"}
         type={"date"}
         name={"dateEndWork"}
         value={value.dateEndWork}
