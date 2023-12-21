@@ -4,6 +4,8 @@ import GeneralInformation from "./GeneralInformation";
 import Professional from "./Professional";
 import Button from "./Button";
 import "../styles/UserInformation.css";
+import lineUp from "../assets/up.svg";
+import lineDown from "../assets/down.svg";
 
 const UserInformation = ({
   dataInfo,
@@ -31,16 +33,13 @@ const UserInformation = ({
   const EditEducation = () => {
     changeState("education", false);
   };
-
   const submitProfession = (e) => {
     e.preventDefault();
     changeState("profession", true);
   };
-
   const EditProfession = () => {
     changeState("profession", false);
   };
-
   const addSvg = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -51,27 +50,6 @@ const UserInformation = ({
       <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
     </svg>
   );
-
-  /*   const up = (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      height="16"
-      width="14"
-      viewBox="0 0 448 512"
-    >
-      <path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z" />
-    </svg>
-  );
-  const down = (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      height="16"
-      width="14"
-      viewBox="0 0 448 512"
-    >
-      <path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
-    </svg>
-  ); */
   return (
     <section className="content__information">
       <article className="content__editable">
@@ -79,7 +57,9 @@ const UserInformation = ({
           <p>
             <b>GeneralInformation</b>
           </p>
-          <button onClick={() => handleClick(0)}>+</button>
+          <button className="line__down" onClick={() => handleClick(0)}>
+            <img src={show === 0 ? lineUp : lineDown} alt="line down icon"></img>  
+          </button>
         </div>
         {show === 0 && (
           <GeneralInformation
@@ -95,7 +75,9 @@ const UserInformation = ({
           <p>
             <b>Educational</b>
           </p>
-          <button onClick={() => handleClick(1)}>+</button>
+          <button className="line__down" onClick={() => handleClick(1)}>
+            <img src={show === 1 ? lineUp : lineDown} alt="line down icon" ></img>
+          </button>
         </div>
         {show === 1 && (
           <form onSubmit={SubmitEducation}>
@@ -103,7 +85,7 @@ const UserInformation = ({
               return (
                 <div key={value.id} className="container__education">
                   <button
-                    className="delete"
+                      className="delete"
                     onClick={() => deleteContent("education", value.id)}
                   >
                     <svg
@@ -147,7 +129,9 @@ const UserInformation = ({
           <p>
             <b>Professional Experience</b>
           </p>
-          <button onClick={() => handleClick(2)}>+</button>
+          <button  className="line__down" onClick={() => handleClick(2)}>
+            <img src={show === 2 ? lineUp : lineDown} alt="line down icon"></img>
+          </button>
         </div>
         {show === 2 && (
           <form onSubmit={submitProfession} className="profession__form">
