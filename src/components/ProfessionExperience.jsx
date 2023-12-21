@@ -5,8 +5,8 @@ function ProfessionExperience({ values }) {
       {values
         .filter((el) => el.stateInputs)
         .map((val) => {
-          const dateStart = new Date(val.dateStartWork); 
-          const  dateEnd = new Date(val.dateEndWork);
+          const dateStart = !val.dateStart ? new Date() : new Date(val.dateStart) ; 
+          const  dateEnd = !val.dateEnd ? new Date() : new Date(val.dateEnd);
           return (
             <div key={val.id} className="profession__experience">
               <p className="resume__company">{val.company}</p>
