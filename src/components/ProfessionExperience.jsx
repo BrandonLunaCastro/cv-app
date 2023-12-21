@@ -9,9 +9,9 @@ function ProfessionExperience({ values }) {
           const  dateEnd = new Date(val.dateEndWork);
           return (
             <div key={val.id} className="profession__experience">
-              <p className="company">{val.company}</p>
+              <p className="resume__company">{val.company}</p>
               <b className="date-work">
-                {dateStart.getFullYear()} - {dateEnd.getFullYear()}
+                {dateStart.getFullYear()} - {dateEnd.getFullYear() === 2023 ? "present" : dateEnd.getFullYear()}
               </b>
               <cite className="position">{val.position}</cite>
               <p className="responsibilities">{val.responsibilities}</p>
