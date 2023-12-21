@@ -58,7 +58,10 @@ const UserInformation = ({
             <b>GeneralInformation</b>
           </p>
           <button className="line__down" onClick={() => handleClick(0)}>
-            <img src={show === 0 ? lineUp : lineDown} alt="line down icon"></img>  
+            <img
+              src={show === 0 ? lineUp : lineDown}
+              alt="line down icon"
+            ></img>
           </button>
         </div>
         {show === 0 && (
@@ -76,7 +79,10 @@ const UserInformation = ({
             <b>Educational</b>
           </p>
           <button className="line__down" onClick={() => handleClick(1)}>
-            <img src={show === 1 ? lineUp : lineDown} alt="line down icon" ></img>
+            <img
+              src={show === 1 ? lineUp : lineDown}
+              alt="line down icon"
+            ></img>
           </button>
         </div>
         {show === 1 && (
@@ -85,7 +91,7 @@ const UserInformation = ({
               return (
                 <div key={value.id} className="container__education">
                   <button
-                      className="delete"
+                    className="delete"
                     onClick={() => deleteContent("education", value.id)}
                   >
                     <svg
@@ -112,7 +118,7 @@ const UserInformation = ({
                 className="add__more"
               />
               <div>
-                <Button type={"submit"} text={"safe"} className={"safe"}/>
+                <Button type={"submit"} text={"safe"} className={"safe"} />
                 <Button
                   type={"button"}
                   text={"edit"}
@@ -129,8 +135,11 @@ const UserInformation = ({
           <p>
             <b>Professional Experience</b>
           </p>
-          <button  className="line__down" onClick={() => handleClick(2)}>
-            <img src={show === 2 ? lineUp : lineDown} alt="line down icon"></img>
+          <button className="line__down" onClick={() => handleClick(2)}>
+            <img
+              src={show === 2 ? lineUp : lineDown}
+              alt="line down icon"
+            ></img>
           </button>
         </div>
         {show === 2 && (
@@ -166,7 +175,7 @@ const UserInformation = ({
                 className="add__more"
               />
               <div>
-                <Button type={"submit"} text={"safe"} className={"safe"}/>
+                <Button type={"submit"} text={"safe"} className={"safe"} />
                 <Button
                   type={"button"}
                   text={"edit"}
