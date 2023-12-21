@@ -11,7 +11,7 @@ function EducationExperience({ values }) {
             <div key={val.id} className="education__experience">
               <p className="school">{val.school}</p>
               <b className="date__study">
-                {dateStart.getFullYear()} - {dateEnd.getFullYear()}
+                {dateStart.getFullYear()} - {dateEnd.getFullYear() === 2023 ? "present" : dateEnd.getFullYear()}
               </b>
               <p className="tuition">{val.title}</p>
             </div>
